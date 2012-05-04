@@ -1,0 +1,13 @@
+How to remove 'denag'
+---------------------
+
+1.  rm -rf /usr/denag
+
+2.  rm /usr/local/bin/denag
+
+3.  Make these symlinks in /usr/bin, replacing the ones you made during
+    the installation:
+
+       CC -> ../lib/driverwrap
+       c89 -> ../lib/driverwrap
+       cc -> ../lib/driverwrap

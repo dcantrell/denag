@@ -1,0 +1,31 @@
+How to install 'denag'
+----------------------
+
+1.  Copy denag to /usr/local/bin
+
+2.  Create a /usr/denag directory and populate it with these symlinks:
+
+       CC -> /usr/lib/driverwrap
+       c89 -> /usr/lib/driverwrap
+       cc -> /usr/lib/driverwrap
+
+3.  Create these symlinks in /usr/bin, replacing the ones that are there:
+
+       CC -> /usr/local/bin/denag
+       c89 -> /usr/local/bin/denag
+       cc -> /usr/local/bin/denag
+
+NOTES
+-----
+
+The MIPSpro development environment requires that the cc, c89, and CC
+symlinks in a subdirectory beneath /usr.  It doesn't matter what you call
+this directory, but it must be just one level under /usr.  I chose to call
+it "denag".
+
+If you change the name of this directory, please make the change in the
+denag script itself, otherwise nothing will work.
+
+You only need to make denag symlinks for the compiler.  The toolchain
+commands (ld, as, etc.) work everyone, it's the compiler that requires the
+license and has the nag screen.

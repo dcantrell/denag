@@ -1,0 +1,33 @@
+#!/bin/sh
+# Wrapper for the Silicon Graphics MIPSpro C and C++ compiler.  Disables
+# the license 'nag' screen from stderr.
+#
+# $Id$
+#
+# $Log$
+# Revision 1.2  2003/04/27 19:07:50  dlc-cvs
+# Use "$@" fro argument expansion rather than $*.
+#
+# Revision 1.1.1.1  2003/04/27 06:43:53  dlc-cvs
+# Initial import
+#
+#
+
+dump=1
+filter_output() {
+   IFS=`echo`
+   while read line ; do
+      if [ $dump -eq 0 -o -n "`echo $line | grep ERROR`" ]; then
+         echo $line
+      elif [ $dump -eq 2 ] ; then
+         dump=0
+      else
+         tval=`echo $line | grep "Graphics support customer then contact your local support provider."`
+         if [ ! -z "$tval" ]; then
+            dump=2
+         fi
+      fi
+   done
+}
+/usr/denag/`basename $0` "$@" 3>&2 2>&1 >&3 | filter_output
+exit 0
