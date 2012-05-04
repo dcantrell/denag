@@ -3,7 +3,7 @@ denag
 
    This is a Bourne shell script that wraps the compiler that ships with the
    MIPSpro development environment.  The wrapper scans the output from the
-   compiler and removes the license nag screen.
+   compiler and suppresses the license nag screen.
 
 How to install
 --------------
@@ -19,12 +19,12 @@ What it does
 ------------
 
    The denag script captures the output from the compiler and removes the
-   license nag screen from stderr.  Both stdout and stderr are left alone and
-   not combined (so you can still grep for errors and such).  Nothing special,
-   the script is rather short.
+   license nag screen from stderr.  Both stdout and stderr are left alone
+   and not combined (so you can still grep for errors and such).  Nothing
+   special, the script is rather short.
 
 Who wrote it
 ------------
 
-   David L. Cantrell Jr. <david@burdell.org>
+   David Cantrell <david.l.cantrell@gmail.com>
    http://www.burdell.org/

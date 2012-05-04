@@ -19,13 +19,13 @@ NOTES
 -----
 
 The MIPSpro development environment requires that the cc, c89, and CC
-symlinks in a subdirectory beneath /usr.  It doesn't matter what you call
-this directory, but it must be just one level under /usr.  I chose to call
-it "denag".
+symlinks exist in a subdirectory beneath /usr.  It doesn't matter what you
+call this directory, but it must be just one level under /usr.  I chose to
+call it "denag".
 
 If you change the name of this directory, please make the change in the
 denag script itself, otherwise nothing will work.
 
 You only need to make denag symlinks for the compiler.  The toolchain
-commands (ld, as, etc.) work everyone, it's the compiler that requires the
-license and has the nag screen.
+commands (ld, as, etc.) work for everyone, it's the compiler that requires
+the license and has the nag screen.
